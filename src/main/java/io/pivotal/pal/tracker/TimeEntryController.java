@@ -24,7 +24,7 @@ public class TimeEntryController{
     @GetMapping("{id}")
     public ResponseEntity<TimeEntry> read(@PathVariable long id) {
         TimeEntry timeEntry = timeEntryRepository.find(id);
-        return Objects.isNull(timeEntry) ? ResponseEntity.notFound().build():ResponseEntity.ok(timeEntry);
+        return Objects.isNull(timeEntry) ? ResponseEntity.notFound().build() : ResponseEntity.ok(timeEntry);
     }
 
     @GetMapping
@@ -35,7 +35,7 @@ public class TimeEntryController{
     @PutMapping("{id}")
     public ResponseEntity<TimeEntry> update(@PathVariable long id, @RequestBody TimeEntry timeEntry) {
         TimeEntry updateEntry = timeEntryRepository.update(id, timeEntry);
-        return Objects.isNull(updateEntry) ? ResponseEntity.notFound().build():ResponseEntity.ok(updateEntry);
+        return Objects.isNull(updateEntry) ? ResponseEntity.notFound().build() : ResponseEntity.ok(updateEntry);
     }
 
     @DeleteMapping("{id}")
